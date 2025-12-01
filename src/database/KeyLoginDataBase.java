@@ -7,10 +7,10 @@ public class KeyLoginDataBase {
     }
 
     public String getUser() {
-        return "postgres";
+        return " ";
     }
 
     public String getPassword() {
-        return "admin";
+        return " ";
     }
 }
