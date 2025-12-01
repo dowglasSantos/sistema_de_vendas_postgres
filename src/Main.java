@@ -1,15 +1,29 @@
-import dao.client.ClientDao;
-import domain.Client;
+import dao.ClientDao;
+import dao.ProductDao;
+import dao.PurchaseNoteDao;
+
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        System.out.println("Sistema de Vendas");
-
-        Client client = new Client("primary update in data base", "78945879516", 22);
-
         ClientDao clientDao = new ClientDao();
+        ProductDao productDao = new ProductDao();
+        PurchaseNoteDao purchaseNoteDao = new PurchaseNoteDao();
 
-        clientDao.saveClient(client);
+        System.out.println("CLIENT");
+        System.out.println(" ");
+        clientDao.searchAllEntryInDataBase();
+        System.out.println(" ");
+        System.out.println("-------------------------------");
+
+        System.out.println("PRODUCT");
+        System.out.println(" ");
+        productDao.searchAllEntryInDataBase();
+        System.out.println(" ");
+        System.out.println("-------------------------------");
+
+        System.out.println("NOTES");
+        System.out.println(" ");
+        purchaseNoteDao.searchAllEntryInDataBase();
     }
 }
